@@ -1,17 +1,14 @@
-nums = [100,4,200,1,3,2]
+res = []
+numbers = [0,0,3,4]
+target =0
 
-nums = list(sorted(set(nums)))
-arr = []
-
-seq = 0
-length = len(nums)
-for i in range(length-1):
-        if nums[i+1] - nums[i] ==1:
-            seq += 1
-        else:
-            arr.append(seq)
-            seq = 0 
-arr.append(seq)
-ans = max(arr) 
-
-print(ans)
+length = len(numbers)
+for i in range(length):
+    for n in range(length):
+        if i == n:
+            continue
+        if numbers[i] + numbers[n]== target:
+            res.append(i+1)
+            res.append(n+1)
+print(res[:2])
+                    
