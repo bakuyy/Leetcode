@@ -1,14 +1,61 @@
-res = []
-numbers = [0,0,3,4]
-target =0
+height = [1,8,6,2,5,4,8,3,7]
+A = []
+for i, nums in enumerate(height):
+    j = i
+    k = i + 1
 
-length = len(numbers)
-for i in range(length):
-    for n in range(length):
-        if i == n:
+    while k<len(height):
+        
+        yAxis = min(height[j], height[k])
+        xAxis = k - i
+        area = yAxis*xAxis
+        k += 1
+        if area < max(height):
             continue
-        if numbers[i] + numbers[n]== target:
-            res.append(i+1)
-            res.append(n+1)
-print(res[:2])
-                    
+        A.append(area)
+
+
+print(A)
+print(max(A))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#     j = i
+#     k = len(height)-1
+
+#     for n in range(len(height)-(j+1)):
+#         xAxis = k-n
+#         yAxis = min(height[n],height[k])
+#         area = yAxis*(xAxis)
+#         A.append(area)
+# set(A)
+# print(max(A))
+
+
+
+
+
+
+
+
+    # k = len(height)-1
+    # Larea = min(height[i], height[k]) *(k-i)
+    # A.append(Larea)
+
+    # j = len(height) -1 - i
+    # Marea = min(height[i], height[j])*(j-i)
+    # A.append(Marea)
+# print(A)
+# print(max(A))
