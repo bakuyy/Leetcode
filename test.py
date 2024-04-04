@@ -1,0 +1,2 @@
+test = dict(('()', '[]', '{}'))
+print(test)
